@@ -1,0 +1,22 @@
+.banner
+{
+    background-image:url('https://images.pexels.com/photos/1279330/pexels-photo-1279330.jpeg?cs=srgb&dl=basil-blur-cheese-1279330.jpg&fm=jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+   
+    height:90vh;
+      
+    width: auto;
+}
+.fadeout{
+
+
+}
+
+.cover{
+height:90vh;
+      
+    width: auto;
+    background-color: black;
+    opacity: 0.4;
+}
