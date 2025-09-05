@@ -3,8 +3,8 @@ import AccordionSummary from "@mui/material/AccordionSummary";
 import AccordionDetails from "@mui/material/AccordionDetails";
 import Typography from "@mui/material/Typography";
 import ArrowDownwardIcon from "@mui/icons-material/ArrowDownward";
-import ArrowDropDownIcon from "@mui/icons-material/ArrowDropDown";
-import { Button, Checkbox, Experimental_CssVarsProvider, FormControlLabel, FormGroup } from "@mui/material";
+
+import { Button, Checkbox, FormControlLabel, FormGroup } from "@mui/material";
 import CurrencyRupeeIcon from '@mui/icons-material/CurrencyRupee';
 export default function MenuCard() {
     const demo=[

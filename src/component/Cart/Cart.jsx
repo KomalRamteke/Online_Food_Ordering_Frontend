@@ -153,75 +153,90 @@ export default function Cart() {
   aria-describedby="modal-modal-description"
 >
   <Box sx={style}>
-    <Formik
-      initialValues={initialValues}
-      onSubmit={handleSubmit}
-      validationSchema={validationSchema}
-    >
-      {({ errors, touched }) => (
-        <Form>
-          <Grid item xs={12}>
-  <Field name="streetAddress">
-    {({ field, meta }) => (
-      <TextField
-        {...field}
-        label="Street Address"
-        fullWidth
-        variant="outlined"
-        error={meta.touched && Boolean(meta.error)}
-        helperText={meta.touched && meta.error}
-      />
-    )}
-  </Field>
-</Grid>
+   <Formik
+  initialValues={initialValues}
+  onSubmit={handleSubmit}
+  validationSchema={validationSchema}
+>
+  {({ errors, touched }) => (
+    <Form>
+      <Grid container spacing={2}>
+        <Grid item xs={12}>
+          <Field name="streetAddress">
+            {({ field, meta }) => (
+              <TextField
+                {...field}
+                label="Street Address"
+                fullWidth
+                variant="outlined"
+                error={meta.touched && Boolean(meta.error)}
+                helperText={meta.touched && meta.error}
+              />
+            )}
+          </Field>
+        </Grid>
 
-<Grid item xs={12}>
-  <Field name="state">
-    {({ field, meta }) => (
-      <TextField
-        {...field}
-        label="State"
-        fullWidth
-        variant="outlined"
-        error={meta.touched && Boolean(meta.error)}
-        helperText={meta.touched && meta.error}
-      />
-    )}
-  </Field>
-</Grid>
+        <Grid item xs={12}>
+          <Field name="state">
+            {({ field, meta }) => (
+              <TextField
+                {...field}
+                label="State"
+                fullWidth
+                variant="outlined"
+                error={meta.touched && Boolean(meta.error)}
+                helperText={meta.touched && meta.error}
+              />
+            )}
+          </Field>
+        </Grid>
 
-<Grid item xs={12}>
-  <Field name="pincode">
-    {({ field, meta }) => (
-      <TextField
-        {...field}
-        label="Pincode"
-        fullWidth
-        variant="outlined"
-        error={meta.touched && Boolean(meta.error)}
-        helperText={meta.touched && meta.error}
-      />
-    )}
-  </Field>
-</Grid>
+        <Grid item xs={12}>
+          <Field name="pincode">
+            {({ field, meta }) => (
+              <TextField
+                {...field}
+                label="Pincode"
+                fullWidth
+                variant="outlined"
+                error={meta.touched && Boolean(meta.error)}
+                helperText={meta.touched && meta.error}
+              />
+            )}
+          </Field>
+        </Grid>
 
-<Grid item xs={12}>
-  <Field name="city">
-    {({ field, meta }) => (
-      <TextField
-        {...field}
-        label="City"
-        fullWidth
-        variant="outlined"
-        error={meta.touched && Boolean(meta.error)}
-        helperText={meta.touched && meta.error}
-      />
-    )}
-  </Field>
-</Grid>
-        </Form>
-      )}
-    </Formik>
+        <Grid item xs={12}>
+          <Field name="city">
+            {({ field, meta }) => (
+              <TextField
+                {...field}
+                label="City"
+                fullWidth
+                variant="outlined"
+                error={meta.touched && Boolean(meta.error)}
+                helperText={meta.touched && meta.error}
+              />
+            )}
+          </Field>
+        </Grid>
+
+        {/* Submit Button */}
+        <Grid item xs={12}>
+          <Button
+            type="submit"
+            variant="contained"
+            color="primary"
+            fullWidth
+          >
+            Submit
+          </Button>
+        </Grid>
+      </Grid>
+    </Form>
+  )}
+</Formik>
+
   </Box>
 </Modal>
 
