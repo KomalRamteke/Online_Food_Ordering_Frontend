@@ -1,17 +1,23 @@
 import { TextField, Typography, Button } from "@mui/material";
 import { Formik, Form, Field } from "formik";
 import { useNavigate } from "react-router-dom";
+import {useDispatch} from 'react-redux';
+import { loginUser } from "../State/Authentication/Action";
 
 export default function LoginForm() {
   const initialValues = {
     email: "",
     password: "",
   };
-
+  const navigate = useNavigate();
+  const dispatch=useDispatch();
+  
   const handleSubmit = (values) => {
     console.log(values); // you can handle login here
+    dispatch(loginUser({userData:values,navigate}))
   };
-  const navigate = useNavigate();
+  
+  
   return (
     <div className="w-full max-w-sm p-5 mx-auto mt-10 bg-white rounded-lg shadow-md">
       <Typography variant="h5" className="mb-6 text-center">

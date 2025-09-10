@@ -9,6 +9,8 @@ import {
 } from "@mui/material";
 import { Formik, Form, Field } from "formik";
 import { useNavigate } from "react-router-dom";
+import { registerUser } from "../State/Authentication/Action";
+import { useDispatch } from "react-redux";
 export default function RegistorForm() {
   const initialValues = {
     fullName: "",
@@ -16,9 +18,10 @@ export default function RegistorForm() {
     password: "",
     role: "Role_Customer",
   };
-
+  const dispatch=useDispatch();
   const handleSubmit = (values) => {
     console.log(values); // you can handle login here
+    dispatch(registerUser({userData:values,navigate}))
   };
   const navigate = useNavigate();
   return (

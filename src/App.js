@@ -1,14 +1,26 @@
 import "./App.css";
-import Navbar from "./component/Navbar/Navbar";
+
 import { CssBaseline, ThemeProvider } from "@mui/material";
 import { DarkTheme } from "./component/Navbar/DarkTheme";
-import Home from "./component/Home/Home";
-import RestaurantDetail from "./component/Restaurant/RestaurantDetail";
-import Cart from "./component/Cart/Cart";
-import Profile from "./component/Profile/Profile";
 import CustomerRouter from "./component/Routers/CustomerRouter";
+import { useEffect } from "react";
+import { getUser } from "./component/State/Authentication/Action";
+import { useDispatch, useSelector } from "react-redux";
 
 function App() {
+  const dispatch = useDispatch();
+
+  const jwt = localStorage.getItem("jwt");
+ // const { auth } = useSelector((store) => store.auth);
+  // useEffect(() => {
+  //   dispatch(getUser(auth.jwt || jwt));
+  // }, [auth.jwt]);
+const { auth } = useSelector((store) => store.auth) || {};
+
+useEffect(() => {
+  dispatch(getUser((auth && auth.jwt) || jwt));
+}, [auth && auth.jwt]);
+
   return (
     <ThemeProvider theme={DarkTheme}>
       <CssBaseline />
@@ -18,7 +30,6 @@ function App() {
        <RestaurantDetail />
        <Cart /> */}
       <CustomerRouter />
-      
     </ThemeProvider>
   );
 }
